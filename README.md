@@ -1,6 +1,6 @@
 <img src="logo.png" alt="Logo" width="200" />
 
-# Ai-Oparator
+# Operator-UI 
 
 Ai-Oparator is a powerful browser extension designed to enhance your browsing experience with AI-driven functionalities.
 
