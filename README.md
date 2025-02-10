@@ -1,3 +1,5 @@
+![Logo](logo.png)
+
 # Ai-Oparator
 
 Ai-Oparator is a powerful browser extension designed to enhance your browsing experience with AI-driven functionalities.
