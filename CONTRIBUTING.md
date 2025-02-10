@@ -1,6 +1,6 @@
-# Contributing to [Your Project Name]
+# Contributing to Oporator-UI 
 
-We welcome contributions to improve the [Your Project Name]! To make sure everyone has a positive experience, please follow these guidelines.
+We welcome contributions to improve the Oporator-UI ! To make sure everyone has a positive experience, please follow these guidelines.
 
 ## How to Contribute
 
