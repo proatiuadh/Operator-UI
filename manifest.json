@@ -7,7 +7,8 @@
     "tabs",
     "activeTab",
     "scripting",
-    "webNavigation"
+    "webNavigation",
+    "storage"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -23,5 +24,11 @@
   ],
   "action": {
     "default_popup": "src/popup/popup.html"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["src/popup/popup.html", "src/popup/settings.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

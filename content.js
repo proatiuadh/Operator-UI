@@ -2,6 +2,14 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.type === 'getHtml') {
+        const htmlContent = document.documentElement.outerHTML;
+        console.log("Sending HTML content from content script:", htmlContent); // Log HTML content for testing
+        sendResponse({ htmlContent: htmlContent });
+    }
+});
+
 async function executeCommands(commands) {
     for (const command of commands) {
         // Execute the command
@@ -20,16 +28,23 @@ async function executeCommand(command) {
             const url = args.join(":");
             console.log('Navigating to:', url); // Add logging
             window.location.href = url;
-            break; // Change return to break
+            break;
         case "open-new-tab":
             window.open(args.join(":"), "_blank");
             break;
         case "click":
-            document.querySelector(args.join(":"))?.click();
+            const selector = args.join(":");
+            const element = document.querySelector(selector);
+            if (element) {
+                console.log('Clicking element:', element); // Add logging
+                element.click();
+            } else {
+                console.error('Element not found for selector:', selector); // Add logging
+            }
             break;
         case "type":
-            const [selector, text] = args.join(":").split(":");
-            const inputElement = document.querySelector(selector);
+            const [typeSelector, text] = args.join(":").split(":");
+            const inputElement = document.querySelector(typeSelector);
             if (inputElement) inputElement.value = text;
             break;
         case "submit":
@@ -52,14 +67,17 @@ async function executeCommand(command) {
             break;
         case "extract":
             const [extractSelector, dataType] = args;
-            const element = document.querySelector(extractSelector);
-            if (element) {
-                console.log(dataType === "text" ? element.innerText : element.value);
+            const extractElement = document.querySelector(extractSelector);
+            if (extractElement) {
+                console.log(dataType === "text" ? extractElement.innerText : extractElement.value);
             }
             break;
-        default:
-            console.warn("Unknown command:", command);
     }
+}
+
+function handleHTMLContent(htmlContent) {
+    console.log("Full page HTML:", htmlContent);
+    // You can add more logic here to process or store the HTML content as needed
 }
 
 // Listen for messages from the background script

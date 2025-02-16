@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        body {
+            width: 400px;
+            margin: 0;
+            padding: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        p {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 16px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Ensures equal spacing between buttons */
+        }
+        .nav-button {
+            width: 140px; /* Fixed width for consistency */
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .nav-button:hover {
+            background: #0056b3;
+        }
+
+        /* Back button */
+        #back-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 16px;
+        }
+        #back-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Settings</h1>
+        <p>Configure your application settings and preferences below. Choose from the options provided to adjust your system.</p>
+        
+        <div class="button-container">
+            <a href="general.html" class="nav-button">General</a>
+            <a href="llm-config.html" class="nav-button">LLM Config</a>
+        </div>
+
+        <a href="popup.html" id="back-button">&#8592; Back</a> <!-- Replaced Settings button -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="popup.css" rel="stylesheet">
+
+    <style>
+        /* Add styles for the Settings button */
+        #settings-button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+            margin-top: 16px;
+        }
+
+        #settings-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Command Center</h1>
+        <div class="input-wrapper">
+            <textarea id="prompt-input" placeholder="Enter your command..."></textarea>
+            <button id="execute-button">
+                <span class="button-text">Send</span>
+                <div class="loader"></div>
+            </button>
+        </div>
+        <div class="toggle-wrapper">
+            <label for="html-toggle">Append HTML to message:</label>
+            <label class="switch">
+                <input type="checkbox" id="html-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div id="response-output" class="response"></div>
+        <button id="settings-button">Settings</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
