@@ -1,7 +1,7 @@
 class BrowserController {
     constructor() {
-        this.API_URL = 'https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B/v1/chat/completions';
-        this.API_KEY = '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';
+        this.API_URL = '';
+        this.API_KEY = '';
         this.MAX_TOKENS = 16384;
         this.MAX_NEW_TOKENS = 500;
     }
