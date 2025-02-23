@@ -14,20 +14,20 @@
     "<all_urls>"
   ],
   "background": {
-    "service_worker": "src/background.js"
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["src/content.js"]
+      "js": ["content.js"]
     }
   ],
   "action": {
-    "default_popup": "src/popup/popup.html"
+    "default_popup": "popup/popup.html"
   },
   "web_accessible_resources": [
     {
-      "resources": ["src/popup/popup.html", "src/popup/settings.html"],
+      "resources": ["popup/popup.html", "src/popup/settings.html"],
       "matches": ["<all_urls>"]
     }
   ]
